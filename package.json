@@ -7,7 +7,6 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "lint:fix": "vue-cli-service lint --fix",
-    "api": "json-server --watch db.json",
     "electron:build": "vue-cli-service electron:build --linux",
     "electron:build:mac": "vue-cli-service electron:build --mac",
     "electron:build:win": "vue-cli-service electron:build --win",

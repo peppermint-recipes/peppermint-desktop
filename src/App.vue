@@ -64,13 +64,9 @@
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
-    <v-content>
+    <v-main>
       <router-view />
-    </v-content>
-
-    <v-footer app>
-      <span>&copy; 2020</span>
-    </v-footer>
+    </v-main>
   </v-app>
 </template>
 

@@ -3,7 +3,9 @@ module.exports = {
     'vuetify',
   ],
   configureWebpack: {
-    resolve: { symlinks: false }
+    resolve: {
+      symlinks: true,
+    },
   },
   pluginOptions: {
     electronBuilder: {

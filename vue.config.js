@@ -4,7 +4,7 @@ module.exports = {
   ],
   configureWebpack: {
     resolve: {
-      symlinks: true,
+      symlinks: false,
     },
   },
   pluginOptions: {

@@ -111,7 +111,8 @@
 </template>
 
 <script>
-import { recipeService, shoppingListService } from '@peppermint-recipes/peppermint-logic';
+import { shoppingListService } from '@peppermint-recipes/peppermint-logic';
+import recipeService from '../inits';
 
 export default {
   props: {
@@ -152,6 +153,7 @@ export default {
 
   methods: {
     saveRecipe() {
+      debugger;
       recipeService.createRecipe(this.recipe);
     },
     deleteCurrentRecipe() {

@@ -17,7 +17,7 @@
   "main": "background.js",
   "dependencies": {
     "@mdi/font": "^5.0.45",
-    "@peppermint-recipes/peppermint-logic": "git+https://github.com/peppermint-recipes/peppermint-logic#main",
+    "@peppermint-recipes/peppermint-logic": "git+https://github.com/peppermint-recipes/peppermint-logic#local-saving-in-electron",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "material-design-icons-iconfont": "^5.0.1",

@@ -1,9 +1,14 @@
-import { RecipeService, recipeService } from '@peppermint-recipes/peppermint-logic';
+import * as foo from '@peppermint-recipes/peppermint-logic';
 
 console.log('test');
 
-debugger;
-console.log(RecipeService, recipeService);
+console.log(foo);
+console.log(foo.fuck);
+console.log(foo.recipeService);
+console.log(foo.RecipeService);
+// console.log(recipeService);
+
+const recipeService = true;
 
 // const localRecipesDesktop = new LocalRecipesDesktop();
 // const recipeService1 = new RecipeService(localRecipesDesktop);

@@ -16,6 +16,7 @@ module.exports = {
           category: "Utility",
           desktop: "peppermint-recipes",
         },
+        preload: 'src/preload.js',
       },
     },
   },

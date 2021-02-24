@@ -5,6 +5,10 @@ module.exports = {
     node: true,
   },
 
+  globals: {
+    __static: 'readonly',
+  },
+
   extends: [
     'plugin:vue/recommended',
     '@vue/airbnb',

@@ -1,9 +1,18 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { app, protocol, BrowserWindow } from 'electron';
+import {
+  app, protocol, BrowserWindow, ipcMain,
+} from 'electron';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
+import path from 'path';
+
+import { recipeService } from '@peppermint-recipes/peppermint-logic';
+
+console.log(recipeService);
+
+console.log('background.js');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -26,6 +35,9 @@ async function createWindow() {
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration
       // for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+      contextIsolation: true,
+      // __static is set by webpack and will point to the public directory
+      preload: path.join(__static, 'preload.js'),
     },
   });
 
@@ -92,3 +104,10 @@ if (isDevelopment) {
     });
   }
 }
+
+ipcMain.on('TEST', async (event, payload) => {
+  console.log(payload);
+  await recipeService.createRecipe(payload);
+  console.log('created');
+  // event.reply('TEST', 'created');
+});

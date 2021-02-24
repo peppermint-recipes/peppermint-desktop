@@ -112,7 +112,6 @@
 
 <script>
 import { shoppingListService } from '@peppermint-recipes/peppermint-logic';
-import recipeService from '../inits';
 
 export default {
   props: {
@@ -144,7 +143,7 @@ export default {
             instructions: '',
           };
         } else {
-          this.recipe = await recipeService.getRecipeById(value);
+          // this.recipe = await recipeService.getRecipeById(value);
         }
       },
       immediate: true,
@@ -153,11 +152,12 @@ export default {
 
   methods: {
     saveRecipe() {
-      debugger;
-      recipeService.createRecipe(this.recipe);
+      console.log(window);
+      window.ipc.send('TEST', this.recipe);
+      // recipeService.createRecipe(this.recipe);
     },
     deleteCurrentRecipe() {
-      recipeService.deleteRecipe(this.id);
+      // recipeService.deleteRecipe(this.id);
       this.goToRecipes();
     },
     goToRecipes() {

@@ -13,3 +13,6 @@ yarn-error.log*
 
 # build artifacts
 dist_electron/
+
+#Electron-builder output
+/dist_electron

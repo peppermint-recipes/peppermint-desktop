@@ -105,9 +105,13 @@ if (isDevelopment) {
   }
 }
 
-ipcMain.on('TEST', async (event, payload) => {
+ipcMain.on('PUT_RECIPE', async (event, payload) => {
   console.log(payload);
   await recipeService.createRecipe(payload);
   console.log('created');
   // event.reply('TEST', 'created');
+});
+
+ipcMain.on('DELETE_RECIPE', async (event, payload) => {
+  await recipeService.deleteRecipe(payload);
 });

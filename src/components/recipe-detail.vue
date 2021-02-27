@@ -153,11 +153,12 @@ export default {
   methods: {
     saveRecipe() {
       console.log(window);
-      window.ipc.send('TEST', this.recipe);
+      window.ipc.send('PUT_RECIPE', this.recipe);
       // recipeService.createRecipe(this.recipe);
     },
     deleteCurrentRecipe() {
       // recipeService.deleteRecipe(this.id);
+      window.ipc.send('DELETE_RECIPE', this.id);
       this.goToRecipes();
     },
     goToRecipes() {
